@@ -1,8 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask
+from incolumepy.typerite_flask.ext.webui.main import bp
 
 
 def create_app():
     app = Flask(__name__)
+    app.register_blueprint(bp)
 
     @app.route("/hello")
     def hello():
