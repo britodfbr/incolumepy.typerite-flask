@@ -1,0 +1,22 @@
+[default]
+DEBUG = false
+FLASK_ADMIN_NAME = "Typerite Flask Incolume"
+FLASK_ADMIN_TEMPLATE_MODE = "bootstrap3"
+FLASK_ADMIN_SWATCH = 'cerulean'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///development.db'
+TITLE = "incolumepy.typerite-flask"
+SECRET_KEY = "jadkfbsdkjbfbh"
+
+[development]
+DEBUG = true
+TEMPLATES_AUTO_RELOAD = true
+EXTENSIONS = [
+  "flask_debugtoolbar:DebugToolbarExtension",
+  "dynaconf_merge_unique"  # to reuse extensions list from [default]
+]
+
+[testing]
+SQLALCHEMY_DATABASE_URI = 'sqlite:///testing.db'
+
+[production]
+SQLALCHEMY_DATABASE_URI = 'sqlite:///production.db'
